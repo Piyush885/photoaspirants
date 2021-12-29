@@ -227,7 +227,8 @@ img{
     overflow: hidden;
 }
 .about__img img{
-    width: 100px;
+    width: 170px;
+    height: 250px;
 }
 .about__subtitle{
     font-size: var(--h2-font-size);
