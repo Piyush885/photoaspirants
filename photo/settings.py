@@ -15,6 +15,8 @@ import os
 import photo2
 from decouple import config
 import django_heroku
+# import cloudinary_storage
+import cloudinary_storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage' 
 ]
 
 MIDDLEWARE = [
@@ -133,6 +136,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'da1ruwfvy',
+    'API_KEY': '719214971624294',
+    'API_SECRET': 'oSSoiPWvttiJxutP6PAGlx7JNA8'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
